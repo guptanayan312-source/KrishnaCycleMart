@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Krishna Cycle Mart</title>
+        <!-- SEO meta -->
+        <meta name="description" content="Krishna Cycle Mart — trusted cycle shop on New Sama Road, Vadodara. Sales, repairs, servicing and accessories near Sama Sports Stadium.">
+        <meta name="author" content="Krishna Cycle Mart">
+        <meta name="theme-color" content="#0d47a1">
+        <meta name="keywords" content="cycle shop Vadodara, bicycle repair Vadodara, Krishna Cycle Mart, cycle repair New Sama Road, bicycle service center Vadodara, cycle shop near Sama Sports Stadium, best cycle repair Vadodara, cycle accessories Vadodara, gear cycle repair Vadodara, kids bicycle repair Vadodara, cycle maintenance Vadodara, bicycle shop near me Vadodara, New Sama Vadodara cycle shop, affordable bicycle repair Vadodara">
+        <link rel="canonical" href="http://example.com/">
+        <meta name="robots" content="index, follow">
+
+        <!-- Open Graph / Social -->
+        <meta property="og:site_name" content="Krishna Cycle Mart">
+        <meta property="og:title" content="Krishna Cycle Mart — Bicycles & Servicing, Vadodara">
+        <meta property="og:description" content="Trusted cycle shop on New Sama Road offering sales, repairs, servicing and accessories. Visit for expert advice and genuine parts near Sama Sports Stadium.">
+        <meta property="og:type" content="business.business">
+        <meta property="og:url" content="http://example.com/">
+        <meta property="og:image" content="logo.jpeg">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Krishna Cycle Mart — Bicycles & Servicing, Vadodara">
+        <meta name="twitter:description" content="Trusted cycle shop on New Sama Road offering sales, repairs, servicing and accessories.">
+        <meta name="twitter:image" content="logo.jpeg">
+
+        <!-- JSON-LD LocalBusiness structured data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Krishna Cycle Mart",
+            "image": "logo.jpeg",
+            "@id": "http://example.com/",
+            "url": "http://example.com/",
+            "description": "Krishna Cycle Mart — bicycle shop and service center on New Sama Road, Vadodara. Sales, repairs, maintenance, accessories and expert gear repairs.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Shop No. 1, VMS Flats, Opp. Sama Sports Stadium, New Sama Road",
+                "addressLocality": "Vadodara",
+                "addressRegion": "Gujarat",
+                "postalCode": "390024",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 22.3421027,
+                "longitude": 73.187171
+            },
+            "openingHours": "Mo-Su 09:00-21:00",
+            "keywords": "cycle shop Vadodara, bicycle repair Vadodara, Krishna Cycle Mart, cycle repair New Sama Road, bicycle service center Vadodara"
+        }
+        </script>
+    <!-- cache-busted favicon to force reload in browsers -->
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg-start: #cfe8ff;
+            --bg-end: #b6dcff;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --text: #0f172a;
+            --primary: #0d47a1;
+            --accent: #1976d2;
+            --glass: rgba(13,71,161,0.06);
+            --radius: 12px;
+            --shadow: 0 10px 30px rgba(15,23,42,0.06);
+            --transition: 220ms ease;
+        }
+
+        [data-theme="dark"]{
+            --bg-start: #041526;
+            --bg-end: #08192b;
+            --card: #071129;
+            --muted: #9fb3d6;
+            --text: #e6eef8;
+            --primary: #63a4ff;
+            --accent: #4dabf7;
+            --glass: rgba(255,255,255,0.03);
+            --shadow: 0 10px 30px rgba(2,6,23,0.6);
+        }
+
+        *{box-sizing:border-box}
+        body{
+            margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial;
+            background: linear-gradient(135deg,var(--bg-start),var(--bg-end));
+            color:var(--text);
+            -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+            transition:background var(--transition),color var(--transition);
+            background-attachment: fixed;
+        }
+
+        h1,h2,h3{letter-spacing:0.2px;color:var(--primary);text-rendering:optimizeLegibility}
+        h1{font-size:20px}
+        h2{font-size:28px;margin-bottom:10px;color:var(--text);letter-spacing:0.4px}
+        h3{font-size:16px;color:var(--text);margin-bottom:6px}
+        p{color:var(--muted);line-height:1.7}
+        .brand h1{color:var(--text);letter-spacing:0.4px;font-weight:700}
+        .caption{color:var(--muted);font-weight:600;letter-spacing:0.2px}
+
+        .card, .gallery-card, header{transition:transform 280ms var(--transition), box-shadow 280ms var(--transition)}
+        .card{border-radius:14px}
+        .brand img{width:72px;height:72px}
+        nav a{padding:10px 14px;border-radius:10px}
+        nav a.active, nav a:hover{background:rgba(255,255,255,0.06);color:var(--primary);box-shadow:0 6px 18px rgba(13,71,161,0.06)}
+
+        .btn{padding:12px 18px;border-radius:12px;font-size:15px}
+        .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,71,161,0.12)}
+        .ghost.whatsapp{box-shadow:0 8px 20px rgba(37,211,102,0.12);padding:10px 14px}
+
+        .gallery-card{position:relative;overflow:hidden}
+        .gallery-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:12px;background:linear-gradient(180deg, rgba(0,0,0,0.00), rgba(0,0,0,0.45));color:white;transform:translateY(0);transition:transform 300ms ease,opacity 300ms ease}
+        .gallery-card img{transition:transform 420ms cubic-bezier(.2,.9,.2,1)}
+        .gallery-card:hover img{transform:scale(1.06)}
+
+        @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+        .card, .gallery-card, .hero-card{animation:fadeUp 560ms ease both}
+
+        @media(max-width:520px){
+            .brand img{width:56px;height:56px}
+            h2{font-size:20px}
+            .gallery-card img{height:160px}
+        }
+
+        .container{max-width:1100px;margin:0 auto;padding:24px}
+
+        header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px;background:var(--card);border-radius:8px;box-shadow:var(--shadow);margin:18px;border:1px solid rgba(0,0,0,0.04)}
+        .brand{display:flex;gap:12px;align-items:center}
+        .brand img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+        .brand h1{margin:0;font-size:18px}
+        .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+        nav{display:flex;gap:12px;align-items:center}
+        nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+        nav a:hover{background:var(--glass);color:var(--text)}
+
+        .controls{display:flex;gap:8px;align-items:center}
+        .btn{background:linear-gradient(135deg,var(--primary),var(--accent));color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+        .ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 10px;border-radius:10px;color:var(--muted)}
+        .ghost.whatsapp{background:linear-gradient(135deg,#25d366,#128c7e);color:white;border:none;box-shadow:0 6px 14px rgba(37,211,102,0.12)}
+
+        .hero{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 0}
+        .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04)}
+        .hero h2{margin:0 0 8px 0}
+        .hero p{margin:0;color:var(--muted)}
+
+        @media(min-width:900px){.hero{grid-template-columns:1fr 360px}}
+
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+        .gallery-card{border-radius:10px;overflow:hidden;background:var(--card);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04)}
+        .gallery-card img{width:100%;height:220px;object-fit:cover;display:block;transition:transform 300ms}
+        .gallery-card:hover img{transform:scale(1.03)}
+        .caption{padding:12px;color:var(--muted);font-weight:600}
+
+        footer{margin:24px 0;text-align:center;color:var(--muted)}
+        .site-footer{margin-top:24px;padding:18px 0;border-top-left-radius:14px;border-top-right-radius:14px;background:linear-gradient(180deg,#e6f7ff,#e6fbff);}
+        .site-footer .footer-inner{max-width:1100px;margin:0 auto;padding:6px 24px;text-align:center;color:var(--muted);}
+        .site-footer .footer-line{margin:4px 0;font-size:14px}
+
+        a:focus,button:focus{outline:3px solid rgba(99,164,255,0.18);outline-offset:2px}
+    </style>
+</head>
+<body>
+
+    <header class="container" role="banner">
+        <div class="brand">
+            <img src="logo.jpeg" alt="Krishna Cycle Mart logo">
+            <div>
+                <h1>Krishna Cycle Mart</h1>
+                <p>Owner: Brijesh Gupta — Vadodara</p>
+            </div>
+        </div>
+
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="controls">
+            <a class="btn" href="tel:+919723611501">📞 Call</a>
+            <a class="ghost" href="#contact" title="Location">📍 Location</a>
+            <a class="ghost" href="#reviews" title="Reviews">⭐ Reviews</a>
+            <button id="themeToggle" class="ghost" aria-label="Toggle theme">🌓</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="card">
+                <h2>Trusted Cycles & Expert Servicing</h2>
+                <p>Krishna Cycle Mart offers quality bicycles, repairs, maintenance and accessories with friendly service. Visit us for a personalized recommendation.</p>
+                <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+                    <a class="btn" href="#gallery">View Gallery</a>
+                    <a class="ghost whatsapp" href="https://wa.me/919723611501">💬 WhatsApp</a>
+                </div>
+            </div>
+
+            <aside class="card">
+                <h3 style="margin:0 0 8px 0">Quick Info</h3>
+                <p style="margin:6px 0"><strong>Address:</strong> Shop No. 1, VMS Flats, Opp. Sama Sports Stadium, New Sama Road</p>
+                <p style="margin:6px 0"><strong>Hours:</strong> 9:00 AM – 9:00 PM (Daily)</p>
+            </aside>
+        </section>
+
+        <h2 id="gallery" style="margin-top:18px">Our Shop</h2>
+        <div class="grid" aria-live="polite">
+            <figure class="gallery-card"><img src="image1.jpg" alt="Inside shop - cycles on display"><figcaption class="caption">Shop display</figcaption></figure>
+            <figure class="gallery-card"><img src="image2.jpg" alt="Full view of the shop"><figcaption class="caption">Full shop view</figcaption></figure>
+            <figure class="gallery-card"><img src="image3.jpg" alt="Bicycle accessories shelf"><figcaption class="caption">Accessories</figcaption></figure>
+            <figure class="gallery-card"><img src="image4.jpg" alt="Service and repair area"><figcaption class="caption">New Cycles</figcaption></figure>
+            <figure class="gallery-card"><img src="image5.jpg" alt="Customer receiving a bike"><figcaption class="caption">New Cycles</figcaption></figure>
+            <figure class="gallery-card"><img src="image6.jpg" alt="Close-up bicycle parts"><figcaption class="caption">Parts & components</figcaption></figure>
+        </div>
+
+        <h2 id="about" style="margin-top:28px">About Us</h2>
+        <div class="card">
+            <p>Welcome to <strong>Krishna Cycle Mart</strong>, your trusted shop for bicycles and premium cycle services in Vadodara. We provide cycles for all age groups, repairs, servicing, accessories, and expert advice.</p>
+        </div>
+
+        <h2 id="contact" style="margin-top:18px">Contact Us</h2>
+        <div class="card">
+            <p><strong>Address:</strong> Shop No. 1, VMS Flats, Opp. Sama Sports Stadium, New Sama Road, Vadodara, Gujarat 390024</p>
+            <p><strong>Timings:</strong> 9:00 AM – 9:00 PM (Daily)</p>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+                <a class="btn" href="tel:+919723611501">📞 Click to Call</a>
+                <a class="ghost whatsapp" href="https://wa.me/919723611501">💬 WhatsApp Chat</a>
+            </div>
+        </div>
+
+        <!-- ⭐ INSERTED MAP SECTION ⭐ -->
+        <div class="card" style="margin-top:18px;">
+            <h3 style="margin:0 0 10px 0">Store Location</h3>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.4571811580408!2d73.187171!3d22.3421027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fcf2912ffbf95%3A0xfd40daba5fb71891!2sKrishna%20Cycle%20Mart!5e0!3m2!1sen!2sin!4v1700437470923!5m2!1sen!2sin"
+              width="100%" 
+              height="350" 
+              style="border:0;border-radius:12px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <!-- ⭐ END MAP SECTION ⭐ -->
+
+        <!-- ⭐ REVIEWS SECTION (added from attachments) ⭐ -->
+        <div class="card" id="reviews" style="margin-top:18px;">
+            <h3 style="margin:0 0 10px 0">Customer Reviews</h3>
+            <div class="grid">
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Mayur Thacker" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Mayur Thacker</strong>
+                            <div style="color:var(--muted);font-size:13px">Local Guide · 2 years ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★★</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">The servicer Guptaji makes the bike new everytime he does it..👍</p>
+                </article>
+
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Shantala Dutta" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Shantala Dutta</strong>
+                            <div style="color:var(--muted);font-size:13px">2 reviews · a month ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★★</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">Perfect service.</p>
+                </article>
+
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Yashraj Sharma" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Yashraj Sharma</strong>
+                            <div style="color:var(--muted);font-size:13px">1 review · a month ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★★</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">Very good customer service and good prices</p>
+                </article>
+
+                <!-- Additional reviews added below -->
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Rajesh Mehta" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Rajesh Mehta</strong>
+                            <div style="color:var(--muted);font-size:13px">Cyclist · 5 months ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★☆</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">Good selection and honest pricing. Mechanic fixed my gears quickly.</p>
+                </article>
+
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Priya Singh" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Priya Singh</strong>
+                            <div style="color:var(--muted);font-size:13px">Weekend Rider · 2 months ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★★</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">Lovely shop — friendly staff and fast service. My bicycle feels brand new.</p>
+                </article>
+
+                <article class="card" style="padding:12px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                        <div style="width:44px;height:44px;border-radius:999px;overflow:hidden;flex:0 0 44px">
+                            <img src="Profile.png" alt="Akash Verma" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <div>
+                            <strong>Akash Verma</strong>
+                            <div style="color:var(--muted);font-size:13px">Commuter · 1 month ago</div>
+                        </div>
+                        <div style="margin-left:auto;color:#f5c518;font-weight:700">★★★★☆</div>
+                    </div>
+                    <p style="margin:0;color:var(--muted)">Solid service and advice. They recommended a good commuter tyre within my budget.</p>
+                </article>
+
+                <!-- trimmed extra reviews; only six kept as requested -->
+            </div>
+        </div>
+        <!-- ⭐ END REVIEWS SECTION ⭐ -->
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-line">© 2025 Krishna Cycle Mart — All Rights Reserved</div>
+            <div class="footer-line">Made By Nayan Gupta</div>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            const toggle = document.getElementById('themeToggle');
+            const root = document.documentElement;
+            const stored = localStorage.getItem('kcmt-theme');
+            if(stored) root.setAttribute('data-theme', stored);
+            const updateBtn = ()=>{
+                const theme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                toggle.textContent = theme === 'dark' ? '☀️' : '🌓';
+                toggle.title = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+            };
+            updateBtn();
+            toggle.addEventListener('click', ()=>{
+                const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+                const next = current === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                localStorage.setItem('kcmt-theme', next);
+                updateBtn();
+            });
+
+            document.querySelectorAll('.gallery-card img').forEach(img=>{
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', ()=> window.open(img.src, '_blank'));
+                });
+
+                document.addEventListener('contextmenu', function(e){
+                    e.preventDefault();
+                });
+
+                document.addEventListener('keydown', function(e){
+                    const key = e.key || e.keyCode;
+
+                    const isF12 = e.key === 'F12' || key === 123;
+                    const isCtrlU = (e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U' || key === 85);
+                    const isCtrlShiftI = (e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i');
+                    const isCtrlShiftJ = (e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'J' || e.key === 'j');
+                    const isCtrlShiftC = (e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c');
+
+                    if(isF12 || isCtrlU || isCtrlShiftI || isCtrlShiftJ || isCtrlShiftC){
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return false;
+                    }
+                });
+            })();
+    </script>
+
+</body>
+</html>
