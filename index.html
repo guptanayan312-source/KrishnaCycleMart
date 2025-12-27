@@ -162,6 +162,18 @@
         .site-footer .footer-line{margin:4px 0;font-size:14px}
 
         a:focus,button:focus{outline:3px solid rgba(99,164,255,0.18);outline-offset:2px}
+        /* Intro overlay with small player centered over a dim backdrop */
+        #introOverlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.65);backdrop-filter:blur(6px);z-index:9999}
+        .introPlayer{position:relative;width:420px;max-width:90vw;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.45);overflow:hidden}
+        .introPlayer video{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover}
+        @media (max-width:520px){
+            .introPlayer{width:90vw;position:fixed;bottom:12px;left:50%;transform:translateX(-50%)}
+        }
+        /* Floating audio control (shown when autoplay fails) */
+        .audioControl{position:fixed;left:16px;bottom:16px;z-index:11000;background:rgba(0,0,0,0.6);color:#fff;padding:8px 12px;border-radius:12px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(2,6,23,0.4)}
+        .audioControl button{background:transparent;border:0;color:inherit;font-weight:700;cursor:pointer}
+        .audioControl .vol{width:96px}
+        .musicFab{position:fixed;right:16px;bottom:16px;z-index:11000;width:56px;height:56px;border-radius:999px;background:linear-gradient(135deg,#0d47a1,#1976d2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 10px 30px rgba(13,71,161,0.2);cursor:pointer;border:0}
     </style>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4G40NPMR36"></script>
@@ -174,6 +186,18 @@
         </script>
 </head>
 <body>
+    <div id="introOverlay" aria-hidden="false">
+        <div class="introPlayer" role="dialog" aria-label="Intro video">
+            <video id="introVideo" autoplay muted playsinline preload="auto">
+                <!-- Prefer HD sources when available (place files in the site root):
+                     Welcome-1080.mp4, Welcome-720.mp4. Fallback: Welcome.mp4 -->
+                <source src="Welcome-1080.mp4" type="video/mp4" media="(min-width:1200px)">
+                <source src="Welcome-720.mp4" type="video/mp4" media="(min-width:600px)">
+                <source src="Welcome.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
 
     <header class="container" role="banner">
         <div class="brand">
@@ -404,6 +428,77 @@
                     }
                 });
             })();
+    </script>
+
+            <script>
+                (function(){
+                        const video = document.getElementById('introVideo');
+                        const overlay = document.getElementById('introOverlay');
+                        if(!video || !overlay) return;
+
+                    // Prevent background scrolling while intro is visible
+                    const prevOverflow = document.body.style.overflow || '';
+                    document.body.style.overflow = 'hidden';
+
+                    function endIntro(){
+                        overlay.style.transition = 'opacity 420ms ease';
+                        overlay.style.opacity = '0';
+                        overlay.setAttribute('aria-hidden','true');
+                        // restore scrolling
+                        document.body.style.overflow = prevOverflow;
+                        setTimeout(()=>{
+                            try{ overlay.remove(); }catch(e){}
+                        },460);
+                    }
+
+                    video.addEventListener('ended', endIntro);
+
+                    // If autoplay is blocked, show the player but still remove overlay after a short timeout
+                    setTimeout(()=>{
+                        if(video.paused){
+                            // allow user to tap play, but if no interaction, remove overlay so page is usable
+                            endIntro();
+                        }
+                    }, 4000);
+                })();
+            </script>
+
+    <!-- simplified audio element (keeps looping background music) -->
+    <audio id="siteAudio" src="krishna.mp3" preload="auto" loop></audio>
+
+    <!-- Minimal audio & intro handling: try autoplay once and fallback to user gesture -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        var audio = document.getElementById('siteAudio');
+        var video = document.getElementById('introVideo');
+        var overlay = document.getElementById('introOverlay');
+
+        function endIntro(){
+            if(!overlay) return;
+            overlay.style.transition = 'opacity 420ms ease';
+            overlay.style.opacity = '0';
+            overlay.setAttribute('aria-hidden','true');
+            setTimeout(function(){ if(overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay); }, 460);
+        }
+
+        if(video) video.addEventListener('ended', endIntro);
+
+        // If the video doesn't autoplay, close the overlay after a short timeout
+        setTimeout(function(){ if(overlay && video && video.paused) endIntro(); }, 4000);
+
+        // Try to play audio once; if blocked, a user gesture will start it.
+        function tryPlayAudio(){
+            if(!audio) return;
+            var p = audio.play();
+            if(p && typeof p.then === 'function') p.catch(function(){ /* autoplay prevented */ });
+        }
+
+        tryPlayAudio();
+
+        function userStart(){ tryPlayAudio(); window.removeEventListener('pointerdown', userStart); window.removeEventListener('keydown', userStart); }
+        window.addEventListener('pointerdown', userStart);
+        window.addEventListener('keydown', userStart);
+    });
     </script>
 
 </body>
