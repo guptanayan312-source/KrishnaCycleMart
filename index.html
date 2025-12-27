@@ -202,7 +202,8 @@
         .introPlayer{position:relative;width:420px;max-width:90vw;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.45);overflow:hidden}
         .introPlayer video{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover}
         @media (max-width:520px){
-            .introPlayer{width:90vw;position:fixed;bottom:12px;left:50%;transform:translateX(-50%)}
+            /* Keep the intro centered by using the overlay's flexbox centering */
+            .introPlayer{width:90vw;max-width:92vw;position:relative;bottom:auto;left:auto;transform:none}
         }
         /* Floating audio control (shown when autoplay fails) */
         .audioControl{position:fixed;left:16px;bottom:16px;z-index:11000;background:rgba(0,0,0,0.6);color:#fff;padding:8px 12px;border-radius:12px;display:flex;gap:8px;align-items:center;box-shadow:0 6px 18px rgba(2,6,23,0.4)}
@@ -501,6 +502,9 @@
     <!-- simplified audio element (keeps looping background music) -->
     <audio id="siteAudio" src="krishna.mp3" preload="auto" loop></audio>
 
+    <!-- Floating music control button (play / pause) -->
+    <button id="musicFab" class="musicFab" aria-pressed="false" aria-label="Play background music" title="Play background music">🔈</button>
+
     <!-- Minimal audio & intro handling: try autoplay once and fallback to user gesture -->
     <script>
     document.addEventListener('DOMContentLoaded', function(){
@@ -534,6 +538,61 @@
         window.addEventListener('pointerdown', userStart);
         window.addEventListener('keydown', userStart);
     });
+    </script>
+
+    <script>
+    (function(){
+        var audio = document.getElementById('siteAudio');
+        var fab = document.getElementById('musicFab');
+        if(!audio || !fab) return;
+
+        function updateFab(){
+            if(audio.paused){
+                fab.textContent = '🔈';
+                fab.setAttribute('aria-pressed','false');
+                fab.setAttribute('aria-label','Play background music');
+                fab.title = 'Play background music';
+            } else {
+                fab.textContent = '🔊';
+                fab.setAttribute('aria-pressed','true');
+                fab.setAttribute('aria-label','Pause background music');
+                fab.title = 'Pause background music';
+            }
+        }
+
+        fab.addEventListener('click', function(){
+            if(audio.paused){
+                var p = audio.play();
+                if(p && typeof p.then === 'function') p.catch(function(){});
+            } else {
+                audio.pause();
+            }
+            updateFab();
+        });
+
+        // Keep FAB state in sync with audio
+        audio.addEventListener('play', updateFab);
+        audio.addEventListener('pause', updateFab);
+
+        // Initialize
+        updateFab();
+    })();
+    </script>
+
+    <script>
+    // Start playback on first user click/tap anywhere (one-time listener)
+    (function(){
+        var audio = document.getElementById('siteAudio');
+        if(!audio) return;
+        function startOnInteraction(){
+            var p = audio.play();
+            if(p && typeof p.then === 'function') p.catch(function(){});
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('touchstart', startOnInteraction);
+        }
+        document.addEventListener('click', startOnInteraction, {once:true});
+        document.addEventListener('touchstart', startOnInteraction, {once:true});
+    })();
     </script>
 
 </body>
